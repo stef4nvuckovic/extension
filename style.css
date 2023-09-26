@@ -1,113 +1,253 @@
 body {
-    background-color: #85297c;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  background-color: #85297c;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 50px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
 
 h1 {
-    margin-left: 15px;
-    margin-top: -10px;
-    font-size: 36px;
+  margin-left: 15px;
+  margin-top: -10px;
+  font-size: 36px;
 }
 
 #search-bar {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-bottom: 2px solid #fffcfc; 
-    background-color: transparent; 
-    color: #ffffff; 
-    border-radius: 0; 
-    outline: none; 
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #fffcfc;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 0;
+  outline: none;
 }
-
 
 .taskbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
 .gadget {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5); 
-    border: 2px solid #fff; 
-    border-radius: 50%;
-    margin: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #fff; 
-    transition: background-color 0.3s; 
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.1s;
 }
 
 .gadget:hover {
-    background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 0.129);
+  transform: scale(1.1);
 }
 
 .gadget img {
-    z-index: 9999;
-    width: 120px; 
-    height: 120px;
-    object-fit: contain; 
-    border-radius: 50%; 
+  z-index: 9999;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-
 body {
-    background-image: url('resources/images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url('resources/images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .burghy {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.5); 
-    border: 2px solid #fff; 
-    border-radius: 50%;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #fff; 
-    transition: background-color 0.3s; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
 .burghy:hover {
-    background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .burghy img {
-    width: 100%; 
-    height: 100%;
-    object-fit: contain; 
-    border-radius: 50%; 
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.control {
+  margin: 50px auto;
+  width: 300px;
+}
+
+
+.control-title {
+  display: block;
+  margin: 0 0 5px;
+  font-size: 0.6em;
+  letter-spacing: 0.25em;
+}
+.control.clearfix {
+  display: none;
+}
+
+.control-session,
+.control-break {
+  margin-bottom: -10%;
+  padding: 5px 10px;
+  width: 140px;
+  color: #3e4348;
+  color: rgb(234, 234, 234);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.control-session {
+  float: left;
+}
+
+.control-break {
+  float: right;
+}
+
+.pomodoro {
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  color: #3e4348;
+  text-align: center;
+  display: none; /* Initially hide the Pomodoro timer */
+}
+
+.taskbar .clock-gadget {
+  cursor: pointer;
+}
+
+.taskbar .clock-gadget:hover {
+  background-color: rgba(255, 255, 255, 0.129);
+  transform: scale(1.1);
+}
+
+.status {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  color: #3e4348;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+.timer {
+  padding-top: 110px;
+  font-size: 4em;
+}
+
+.button {
+  margin: 15px 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color: #3e4348;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #3e4348;
+  color: #fff;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.session {
+  border: 10px solid #ff7473;
+  background: #ff7473;
+  color: #fff;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+  -moz-animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.break {
+  background: #e3dede;
+  border: 10px solid #fff;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+@keyframes glow {
+  from {
+      -webkit-box-shadow: 0 0 30px 0 rgba(255, 100, 100, 0.3);
+      -moz-box-shadow: 0 0 30px 0 rgba(255, 100, 100, 0.3);
+      box-shadow: 0 0 30px 0 rgba(255, 100, 100, 0.3);
+  }
+  to {
+      -webkit-box-shadow: 0 0 50px 5px rgba(255, 100, 100, 1);
+      -moz-box-shadow: 0 0 50px 5px rgba(255, 100, 100, 1);
+      box-shadow: 0 0 50px 5px rgba(255, 100, 100, 1);
+  }
+}
+
+footer {
+  margin: 30px;
+  color: #3e4348;
+  font-size: 0.6em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
