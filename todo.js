@@ -35,3 +35,22 @@ function showTask(){
   listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
+
+
+
+/* Fetching gadget
+// Get the toDoApp element
+var toDoApp = document.querySelector('todo-app');
+
+// Function to toggle the Pomodoro timer's visibility along with the control clearfix
+function toggleToDo() {
+  var isVisible = getComputedStyle(toDoApp).display === 'block';
+  toDoApp.style.display = isVisible ? 'none' : 'block';
+}
+
+// Add an event listener to the clock gadget button on the taskbar
+var toDoGadget = document.querySelector('todo-app');
+toDoGadget.addEventListener('click', function() {
+  toggleToDo();
+});
+*/

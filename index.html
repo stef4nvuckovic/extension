@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUNY Search</title>
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="todo.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -31,7 +33,20 @@
             <button class="button" id="switch"><i class="fa fa-exchange"></i></button>
             <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
             <button class="button" id="toggle"><i class="fa fa-play"></i></button>
-          </div>        
+          </div>
+          <div class="todo-app">
+            <h1>To-Do list <img src="resource/icon.png"></h1>
+            <div class="row">
+              <input id="inputBox" type="text" placeholder="Add your tasks">
+              <button id="addToDo" onclick="addTask()">Add</button>
+            </div>
+            <ul id="listContainer">
+                <!--
+                  <li class="checked">Test1</li>
+                  <li>Quiz1</li>
+                -->
+            </ul>
+          </div>            
         
     </div>
     <div class="taskbar">
@@ -41,7 +56,7 @@
         <div class="gadget"><img src="resources/icon/headphone.png" alt="Headphone"></div>
         <div class="gadget"><img src="resources/icon/magnifier.png" alt="Magnifier"></div>
         <div class="gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
-        <div class="gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
+        <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
     </div>
 
     <div class="burghy">
@@ -61,4 +76,6 @@
 </body>
 
 <script src="scripts.js"></script>
+<script src="todo.js"></script>
+
 </html>
