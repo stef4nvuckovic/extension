@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNY Search</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="todo.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>SUNY SEARCH</h1>
+        <form action="https://cse.google.com/cse.js?cx=57d12bc989edd45fe" method="GET" target="_blank">
+          <input type="text" id="search-bar" name="q" placeholder="What time does Clinton close?">
+      </form>
+      
+
+        <div class="control clearfix" style="z-index: 9999;">
+            <div class="control-session">
+              <span class="control-title">session</span>
+              <i class="fa fa-minus-circle" id="session-minus"></i> &nbsp; <span id="session">25</span> &nbsp; <i class="fa fa-plus-circle" id="session-plus"></i>
+            </div>
+            <div class="control-break">
+              <span class="control-title">break</span>
+              <i class="fa fa-minus-circle" id="break-minus"></i> &nbsp; <span id="break">5</span> &nbsp; <i class="fa fa-plus-circle" id="break-plus"></i>
+            </div>
+          </div>
+          <div class="pomodoro session" style="z-index: 9999;">
+            <div class="status">session</div>
+            <div class="timer">25:00</div>
+            <button class="button" id="switch"><i class="fa fa-exchange"></i></button>
+            <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
+            <button class="button" id="toggle"><i class="fa fa-play"></i></button>
+          </div>
+          <div class="todo-app">
+            <h1>To-Do list <img src="resources/icon.png"></h1>
+            <div class="row">
+              <input id="inputBox" type="text" placeholder="Add your tasks">
+              <button id="addToDo" onclick="addTask()">Add</button>
+            </div>
+            <ul id="listContainer">
+                <!--
+                  <li class="checked">Test1</li>
+                  <li>Quiz1</li>
+                -->
+            </ul>
+          </div>            
+        
+    </div>
+    <div class="taskbar">
+        <div class="gadget clock-gadget"><img src="resources/icon/clock.png" alt="Clock"></div>
+        <div class="gadget"><img src="resources/icon/calendar.png" alt="Calendar"></div>
+        <div class="gadget"><img src="resources/icon/dumbell.png" alt="Dumbell"></div>
+        <div class="gadget"><img src="resources/icon/headphone.png" alt="Headphone"></div>
+        <div class="gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
+        <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
+    </div>
+
+    <div class="burghy">
+      <img src="resources/icon/burghy.png" alt="Burghy" id="burghy-icon">
+      <div class="dropdown-content" id="dropdown-content">
+          <a href="https://www.plattsburgh.edu/portal/">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <a href="#">Link 4</a>
+          <a href="#">Link 5</a>
+      </div>
+  </div>
+  
+</body>
+
+<script src="scripts.js"></script>
+<script src="todo.js"></script>
+
+</html>
