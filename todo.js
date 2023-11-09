@@ -28,21 +28,22 @@ listContainer.addEventListener('click',function(e){
   }
 },false);
 
-function saveData(){
+function saveData(){ //Save the data when new element is created, and when a task is checked off, or when a task is removed
   localStorage.setItem("data",listContainer.innerHTML);
 }
-function showTask(){
+function showTask(){ //Get the data stored in local storage and display that to screen
   listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
 
-// Fetching gadget
+
+//__________________________________________________________ Fetching gadget ___________________________________________________________________________________________
 // Get the toDoApp element
 var toDoApp = document.querySelector('.todo-app');
 toDoApp.style.display = 'none';
 
 
-// Function to toggle the Pomodoro timer's visibility along with the control clearfix
+// Function to toggle the visibility along with the control clearfix
 function toggleToDo() {
   var isVisible = getComputedStyle(toDoApp).display === 'block';
   toDoApp.style.display = isVisible ? 'none' : 'block';
