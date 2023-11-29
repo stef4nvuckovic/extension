@@ -1,3 +1,18 @@
+function fetchData() {
+  fetch('https://ebtisam-project.onrender.com/openapi.json')
+     .then(response => response.json())
+     .then(data => {
+        console.log('Received data:', data);
+        // Optionally, display the data on your webpage
+        document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+     })
+     .catch(error => console.error('Error:', error));
+}
+
+
+
+
+
 //----------------------------------------------POMODORO JS START --------------------------------------------------------------------------
 var pomodoroSkin,
   displayStatus,

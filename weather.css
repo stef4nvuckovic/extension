@@ -11,12 +11,13 @@ body{
 .wContainer{
   font-family: serif;
   position: absolute;
-  top:100px;
-  left:1000px;
+  top:650px;
+  left:1100px;
   width: 100%;
-  max-width: 340px;
-  background-color:#fff;
-  padding: 40px 30px 70px;
+  max-width: 200px;
+  max-height: 130px;
+  background-color:rgba(255, 255, 255,1);
+  padding: 3px 40px 5px;
   border-radius: 10px;
   color: #555;
 }
@@ -29,29 +30,34 @@ body{
   width: 40px;
   margin-left: 10px;
 }
-
 .data_container .location{
-  font-size: 40px;
+  font-size: 22px;
+  text-align: center;
 }
 .data_container .date{
-  font-size: 25px;
+  font-size: 10px;
+  text-align: center;
 }
 .data_container .time{
-  font-size: 25px;
+  font-size: 15px;
+  text-align: center;
 }
 .data_container #am-pm{
-  font-size: 20px;
+  font-size: 15px;
 }
-
 .current_weather_items{
   display: flex;
   flex-direction: column;
-  background: rgba(24, 24, 27,0.2);
+  background: transparent;
   border-radius: 10px;
-  margin: 10px 0;
 }
 .current_weather_items .weather_items{
   display: flex;
   justify-content: space-between;
   padding: 10px;
+}
+.current_weather_items .weather_items p{
+  font-size: 15px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
