@@ -62,11 +62,11 @@
     <div class="burghy">
       <img src="resources/icon/burghy.png" alt="Burghy" id="burghy-icon">
       <div class="dropdown-content" id="dropdown-content">
-          <a href="https://www.plattsburgh.edu/portal/">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-          <a href="#">Link 4</a>
-          <a href="#">Link 5</a>
+          <a href="https://www.plattsburgh.edu/portal/" target="_blank">Platts Portal</a>
+          <a href="https://www.plattsburgh.edu/academics/library/calendar.html" target="_blank">Library Hours</a>
+          <a href="https://www.plattsburgh.edu/athletics/recreational/fitness-center/schedules.html" target="_blank">Group Exercise</a>
+          <a href="https://www.plattsburgh.edu/about/offices-divisions/registrar/academic-calendar.html" target="_blank">School Calendar</a>
+          <a href="https://www.plattsburgh.edu/academics/resources/technology/index.html" target="_blank">Tech Services</a>
       </div>
   </div>
   
@@ -74,5 +74,22 @@
 
 <script src="scripts.js"></script>
 <script src="todo.js"></script>
+
+<script>
+function fetchData() {
+    console.log('Fetching data...');
+    fetch('https://ebtisam-project.onrender.com/openapi.json')
+        .then(response => {
+            console.log('Received response:', response);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Received data:', data);
+            document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+</script>
 
 </html>

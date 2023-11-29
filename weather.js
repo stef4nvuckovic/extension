@@ -1,3 +1,8 @@
+const timeElement = document.getElementById('time');
+const dateElement = document.getElementById('time');
+const locationElement = document.getElementById('time');
+
+
 //_______________________ geolocation api____________________________________________________________________________
 function callApi(){
   if(navigator.geolocation){
@@ -11,10 +16,11 @@ function callApi(){
 };
 
 //out put the coordinates object 
-
+var latitude;
+var longitude;
 function successCallback(pos){
-  var latitude = pos.coords.latitude
-  var longitude = pos.coords.longitude
+  latitude = pos.coords.latitude
+  longitude = pos.coords.longitude
   console.log("Latitude: " + latitude, "Longitude: " + longitude);
 }
 
