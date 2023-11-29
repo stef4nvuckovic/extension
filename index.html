@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="todo.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js"></script>
+    <script src="time.js"></script>
     
 </head>
 <body>
     <div class="container">
+        <div id="currentTime" class="small-time"></div>
         <h1>SUNY SEARCH</h1>
         <form action="https://cse.google.com/cse.js?cx=57d12bc989edd45fe" method="GET" target="_blank">
           <input type="text" id="search-bar" name="q" placeholder="What time does Clinton close?">
-      </form>
+        </form>
+
       
 
         <div class="control clearfix" style="z-index: 9999;">
@@ -57,6 +60,15 @@
         <div class="gadget"><img src="resources/icon/headphone.png" alt="Headphone"></div>
         <div class="gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
         <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
+
+        <div class="gadget background-changer" onclick="changeBackground()">
+          <img src="resources/icon/settings.png" alt="background-changer" id="background-changer">
+        </div>
+        <script src="bg.js"></script>
+        <link rel="stylesheet" href="bg.css"> 
+        
+  
+        </div>
     </div>
 
     <div class="burghy">
