@@ -6,11 +6,13 @@
     <title>SUNY Search</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="todo.css"> 
+    <link rel="stylesheet" href="bg.css"> 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts.js"></script>
-    <script src="todo.js"></script>
-
     <script src="time.js"></script>
+    <script src="bg.js"></script>
+
     
 </head>
 <body>
@@ -20,6 +22,8 @@
         <form action="https://cse.google.com/cse.js?cx=57d12bc989edd45fe" method="GET" target="_blank">
           <input type="text" id="search-bar" name="q" placeholder="What time does Clinton close?">
         </form>
+
+      
 
         <div class="control clearfix" style="z-index: 9999;">
             <div class="control-session">
@@ -38,7 +42,6 @@
             <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
             <button class="button" id="toggle"><i class="fa fa-play"></i></button>
           </div>
-          <!--todo----------------------------------------------------->
           <div class="todo-app">
             <h1>Task Easy<img src="resources/icon.png"></h1>
             <div class="row">
@@ -65,8 +68,6 @@
         <div class="gadget background-changer" onclick="changeBackground()">
           <img src="resources/icon/settings.png" alt="background-changer" id="background-changer">
         </div>
-        <script src="bg.js"></script>
-        <link rel="stylesheet" href="bg.css"> 
         
   
         </div>
