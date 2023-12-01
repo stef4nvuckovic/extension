@@ -29,6 +29,7 @@ h1 {
   margin: 50px auto; /* Centering the container vertically and horizontally */
   padding: 20px;
   position: relative;
+  
   z-index: 1; /* Set a lower z-index than the time element */
 }
 
@@ -202,7 +203,6 @@ body {
   width: 300px;
 }
 
-
 .control-title {
   display: block;
   margin: 0 0 5px;
@@ -281,16 +281,13 @@ body {
   line-height: 36px;
   cursor: pointer;
 }
-
 .button:hover {
   background: #3e4348;
   color: #fff;
 }
-
 .button:focus {
   outline: none;
 }
-
 .session {
   border: 10px solid #ff7473;
   background: #ff7473;
@@ -299,7 +296,6 @@ body {
   -moz-animation: glow 1.5s ease-in-out infinite alternate;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
-
 .break {
   background: #e3dede;
   border: 10px solid #fff;
@@ -307,7 +303,6 @@ body {
   -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
-
 @keyframes glow {
   from {
       -webkit-box-shadow: 0 0 30px 0 rgba(255, 100, 100, 0.3);
@@ -320,7 +315,6 @@ body {
       box-shadow: 0 0 50px 5px rgba(255, 100, 100, 1);
   }
 }
-
 footer {
   margin: 30px;
   color: #3e4348;
@@ -329,17 +323,175 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
-
-
-
         iframe {
             width: 1000px;
             height: 500px; 
         }
-
-
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+/*-------------------------------todo------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+  }
+
+.todo-app{
+  font-family: serif;
+  position: absolute;
+  z-index: 1;
+  top:80px;
+  left:500px;
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  color: #555;
+}
+
+.todo-app h1{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+.header h1 img{
+  width: 40px;
+  margin-left: 10px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e8e7e9;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+input{
+  flex:1;
+  border: none;
+  outline: none;
+  background: transparent;
+  height:40px
+}
+button{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #ff5945;
+  padding:16px 50px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+#listContainer li{
+  list-style: none;
+  font-size: 18px;
+  padding:10px 8px 10px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  text-wrap:wrap;
+  word-wrap: break-word;
+}
+#listContainer li::before{ 
+  content: '';
+  position: absolute;
+  height:25px;
+  width: 25px;
+  border-radius: 50%;
+  background-image: url(resources/grey.png);
+  background-size: cover;
+  background-position: center;
+  top: 8px;
+  left: 12px;
+}
+#listContainer  li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+#listContainer  li.checked::before{
+  background-image: url(resources/purple.png);
+}
+#listContainer  li span{
+  position: absolute;
+  right:-20px;
+  top:5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center
+}
+#listContainer  li span:hover{
+  background: #edeef0;
+}
+
+/*-------------------------------todo end------------------------------*/
+
+/*-------------------------------weather ---------------------------------------------------------------------------*/
+
+.wContainer{
+  font-family: serif;
+  position: absolute;
+  top:-10px;
+  left:570px;
+  width: 100%;
+  max-width: 200px;
+  max-height: 130px;
+  padding: 3px 40px 5px;
+  border-radius: 10px;
+  color: #fff;
+  border:#fff 1px solid;
+}
+
+.wContainer h1{
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header h1 img{
+  width: 40px;
+  margin-left: 10px;
+}
+.data_container .location{
+  font-size: 22px;
+  text-align: center;
+}
+.data_container .date{
+  font-size: 10px;
+  text-align: center;
+}
+.data_container .time{
+  font-size: 15px;
+  text-align: center;
+}
+.data_container #am-pm{
+  font-size: 15px;
+}
+.current_weather_items{
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 10px;
+}
+.current_weather_items .weather_items{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.current_weather_items .weather_items p{
+  font-size: 15px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
