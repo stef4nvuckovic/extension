@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .video-container {
+            width: 640px;
+            height: 360px;
+            margin: 20px auto;
+        }
+        .playlist {
+            width: 640px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .playlist-item iframe {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Playlist</h1>
+    <input type="text" id="searchBox" placeholder="Search for a song...">
+    <button onclick="searchYouTube()">Search</button>
+    
+    <div class="video-container" id="videoContainer"></div>
+
+    <h2>Playlist</h2>
+    <input type="text" id="playlistInput" placeholder="Add a video URL...">
+    <button onclick="addToPlaylist()">Add to Playlist</button>
+
+    <div class="playlist" id="playlist"></div>
+
+    <script>
+        const apiKey = 'AIzaSyCquZd1Da3-6UUkGziL_2d9tjXbi3XQkII';
+
+        function searchYouTube() {
+            const query = document.getElementById('searchBox').value;
+            const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${query}&part=snippet&type=video`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const videoId = data.items[0].id.videoId;
+                    displayVideo(videoId);
+                });
+        }
+
+        function displayVideo(videoId) {
+            const videoContainer = document.getElementById('videoContainer');
+            videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+        }
+
+        function addToPlaylist() {
+            const playlistInput = document.getElementById('playlistInput');
+            const videoUrl = playlistInput.value;
+            const videoId = getVideoId(videoUrl);
+
+            if (videoId) {
+                const playlist = document.getElementById('playlist');
+                const playlistItem = document.createElement('div');
+                playlistItem.classList.add('playlist-item');
+                playlistItem.innerHTML = `
+                    <iframe width="320" height="180" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                    <button onclick="removeFromPlaylist(this)">Remove</button>
+                `;
+                playlist.appendChild(playlistItem);
+            }
+
+            playlistInput.value = '';
+        }
+
+        function removeFromPlaylist(button) {
+            const playlistItem = button.parentElement;
+            playlistItem.remove();
+        }
+
+        function getVideoId(url) {
+            const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+            const match = url.match(regex);
+            return match ? match[1] : null;
+        }
+    </script>
+</body>
+</html>

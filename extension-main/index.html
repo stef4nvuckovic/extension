@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNY Search</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="todo.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js"></script>
+    <script src="time.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div class="container">
+        <div id="currentTime" class="small-time"></div>
+        <h1>SUNY SEARCH</h1>
+        <form action="https://cse.google.com/cse.js?cx=57d12bc989edd45fe" method="GET" target="_blank">
+          <input type="text" id="search-bar" name="q" placeholder="What time does Clinton close?">
+        </form>
+
+      
+
+        <div class="control clearfix" style="z-index: 9999;">
+            <div class="control-session">
+              <span class="control-title">session</span>
+              <i class="fa fa-minus-circle" id="session-minus"></i> &nbsp; <span id="session">25</span> &nbsp; <i class="fa fa-plus-circle" id="session-plus"></i>
+            </div>
+            <div class="control-break">
+              <span class="control-title">break</span>
+              <i class="fa fa-minus-circle" id="break-minus"></i> &nbsp; <span id="break">5</span> &nbsp; <i class="fa fa-plus-circle" id="break-plus"></i>
+            </div>
+          </div>
+          <div class="pomodoro session" style="z-index: 9999;">
+            <div class="status">session</div>
+            <div class="timer">25:00</div>
+            <button class="button" id="switch"><i class="fa fa-exchange"></i></button>
+            <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
+            <button class="button" id="toggle"><i class="fa fa-play"></i></button>
+          </div>
+          <div class="todo-app">
+            <h1>Task Easy<img src="resources/icon.png"></h1>
+            <div class="row">
+              <input id="inputBox" type="text" placeholder="Add your tasks">
+              <button id="addToDo" onclick="addTask()">Add</button>
+            </div>
+            <ul id="listContainer">
+                <!--
+                  <li class="checked">Test1</li>
+                  <li>Quiz1</li>
+                -->
+            </ul>
+          </div>            
+
+
+        <iframe id="calendarFrame" style="display: none; margin: 0; overflow: hidden; margin-top: 50px; margin-left: -40px" src="calendar/index.html" width="1000px" height="500px" frameborder="0"></iframe>
+
+
+=
+
+        
+        <div class="taskbar">
+          <div class="gadget clock-gadget"><img src="resources/icon/clock.png" alt="Clock"></div>
+          <div class="gadget" onclick="toggleCalendar()"><img src="resources/icon/calendar.png" alt="Calendar"></div>
+          <div class="gadget"><img src="resources/icon/dumbell.png" alt="Dumbell"></div>
+          <div class="gadget music-gadget" id="music-gadget" onclick="toggleMusicSlider()">
+              <img src="resources/icon/headphone.png" alt="Music">
+          </div>
+          <div class="gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
+          <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
+          <div class="gadget background-changer" onclick="changeBackground()">
+              <img src="resources/icon/settings.png" alt="background-changer" id="background-changer">
+          </div>
+      </div>
+      
+      <div class="music-slider" id="music-slider">
+          <button id="backward-button"><i class="fa fa-backward"></i></button>
+          <button id="play-button"><i class="fa fa-play"></i></button>
+          <button id="forward-button"><i class="fa fa-forward"></i></button>
+      </div>
+  </div>
+
+
+    <div class="burghy">
+      <img src="resources/icon/burghy.png" alt="Burghy" id="burghy-icon">
+      <div class="dropdown-content" id="dropdown-content">
+          <a href="https://www.plattsburgh.edu/portal/" target="_blank">Platts Portal</a>
+          <a href="https://www.plattsburgh.edu/academics/library/calendar.html" target="_blank">Library Hours</a>
+          <a href="https://www.plattsburgh.edu/athletics/recreational/fitness-center/schedules.html" target="_blank">Group Exercise</a>
+          <a href="https://www.plattsburgh.edu/about/offices-divisions/registrar/academic-calendar.html" target="_blank">School Calendar</a>
+          <a href="https://www.plattsburgh.edu/academics/resources/technology/index.html" target="_blank">Tech Services</a>
+      </div>
+  </div>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.4.2/core/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.4.2/bootstrap/main.min.js"></script>
+
+
+
+<script>
+  var pomodoroTimer = document.querySelector('.pomodoro');
+  var controlClearfix = document.querySelector('.control.clearfix');
+
+  function togglePomodoro() {
+    var isVisible = getComputedStyle(pomodoroTimer).display === 'block';
+    pomodoroTimer.style.display = isVisible ? 'none' : 'block';
+    controlClearfix.style.display = isVisible ? 'none' : 'block';
+  }
+
+  var clockGadget = document.querySelector('.taskbar .clock-gadget');
+  clockGadget.addEventListener('click', function() {
+    togglePomodoro();
+  });
+
+  function toggleCalendar() {
+    var calendarFrame = document.getElementById('calendarFrame');
+    var isVisible = getComputedStyle(calendarFrame).display === 'block';
+    calendarFrame.style.display = isVisible ? 'none' : 'block';
+    controlClearfix.style.display = isVisible ? 'block' : 'none';
+  }
+
+  var calendarGadget = document.querySelector('.taskbar .gadget[alt="Calendar"]');
+  calendarGadget.addEventListener('click', function () {
+    toggleCalendar();
+  });
+
+  (function() {
+    var pomodoroSkin,
+      displayStatus,
+      displayTime,
+      displayToggle,
+      timer,
+      minutes,
+      seconds,
+      timeSession = 25,
+      timeBreak = 5,
+      timeOn = false,
+      time = 1500,
+      status = 'session';
+
+    function changeDisplay() {
+      minutes = parseInt(time / 60, 10);
+      seconds = parseInt(time % 60, 10);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      displayTime.textContent = minutes + ":" + seconds;
+    }
+
+    function setTime(newTime) {
+      time = newTime * 60;
+      changeDisplay();
+    }
+
+    function resetTimer() {
+      if (status === 'session') {
+        setTime(timeSession);
+      } else {
+        setTime(timeBreak);
+      }
+    }
+
+    function switchMode() {
+      if (status !== 'break') {
+        status = 'break';
+        setTime(timeBreak);
+        pomodoroSkin.classList.remove("session");
+        pomodoroSkin.classList.add("break");
+      } else {
+        status = 'session';
+        setTime(timeSession);
+        pomodoroSkin.classList.remove("break");
+        pomodoroSkin.classList.add("session");
+      }
+      displayStatus.innerHTML = status;
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(function() {
+        changeDisplay();
+        if (time !== 0) {
+          time--;
+        } else {
+          switchMode();
+        }
+      }, 1000);
+      displayToggle.innerHTML = '<i class="fa fa-pause"></i>';
+    }
+
+    function toggleTimer() {
+      if (timeOn) {
+        timeOn = false;
+        displayToggle.innerHTML = '<i class="fa fa-play"></i>';
+        clearInterval(timer);
+      } else {
+        timeOn = true;
+        displayToggle.innerHTML = '<i class="fa fa-pause"></i>';
+        startTimer();
+      }
+    }
+
+    pomodoroSkin = document.getElementsByClassName('pomodoro')[0];
+    displayStatus = document.getElementsByClassName('status')[0];
+    displayTime = document.getElementsByClassName('timer')[0];
+    displayToggle = document.getElementById('toggle');
+
+    document.getElementById('switch').onclick = switchMode;
+    document.getElementById('reset').onclick = resetTimer;
+    document.getElementById('toggle').onclick = toggleTimer;
+
+    var displaySession = document.getElementById('session');
+    var displayBreak = document.getElementById('break');
+
+    document.getElementById('session-minus').onclick = function() {
+      if (timeSession > 1) {
+        timeSession--;
+        displaySession.innerHTML = timeSession;
+      }
+    };
+    document.getElementById('session-plus').onclick = function() {
+      if (timeSession < 60) {
+        timeSession++;
+        displaySession.innerHTML = timeSession;
+      }
+    };
+    document.getElementById('break-minus').onclick = function() {
+      if (timeBreak > 1) {
+        timeBreak--;
+        displayBreak.innerHTML = timeBreak;
+      }
+    };
+    document.getElementById('break-plus').onclick = function() {
+      if (timeBreak < 60) {
+        timeBreak++;
+        displayBreak.innerHTML = timeBreak;
+      }
+    };
+
+    resetTimer();
+  })();
+</script>
+
+
+    <script src="scripts.js"></script>
+    <script src="todo.js"></script>
+
+</body>
+</html>

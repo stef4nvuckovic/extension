@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open YouTube Link</title>
+</head>
+<body>
+    <button id="openButton">Open YouTube Link</button>
+
+    <script>
+        document.getElementById('openButton').addEventListener('click', function() {
+            window.location.href = 'https://www.youtube.com/watch?v=iKzRIweSBLA&list=PLKUA473MWUv2jmkqIxzQR3YL4kuPArj4G';
+        });
+    </script>
+</body>
+</html>
