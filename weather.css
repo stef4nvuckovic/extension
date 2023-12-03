@@ -5,21 +5,21 @@
 }
 body{
   font-family: serif;
-  background-color:#fff;
+  background-color:#181616;
 }
 
 .wContainer{
   font-family: serif;
   position: absolute;
-  top:50px;
-  left:1150px;
+  top:-10px;
+  left:570px;
   width: 100%;
   max-width: 200px;
   max-height: 130px;
-  background-color:#013D57;
   padding: 3px 40px 5px;
   border-radius: 10px;
   color: #fff;
+  border:#fff 1px solid;
 }
 
 .wContainer h1{
@@ -30,34 +30,21 @@ body{
   width: 40px;
   margin-left: 10px;
 }
-.data_container .location{
+.data_container #location{
   font-size: 22px;
   text-align: center;
+  font-weight: bold;
+  color: aqua;
 }
-.data_container .date{
-  font-size: 10px;
-  text-align: center;
-}
-.data_container .time{
-  font-size: 15px;
-  text-align: center;
-}
-.data_container #am-pm{
-  font-size: 15px;
-}
+
 .current_weather_items{
   display: flex;
   flex-direction: column;
   background: transparent;
   border-radius: 10px;
 }
-.current_weather_items .weather_items{
+.current_weather_items {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-}
-.current_weather_items .weather_items p{
-  font-size: 15px;
-  margin-top: -5px;
-  margin-bottom: -5px;
 }

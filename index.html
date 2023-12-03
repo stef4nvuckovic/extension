@@ -56,33 +56,11 @@
             <div id="fig"><img src="resources/weather.png" width="50" height="50"></div>-->
             <div class="current_info">
                 <div class="data_container">
-                    <div class="location">
-                        <b>Plattsburgh</b>
-                    </div>
-                    <!--<div class="time">
-                        12:00 <span id="am-pm">PM</span>
-                    </div>
-                   <div class="date">
-                        Sun, 12 Nov
-                    </div>--> 
-                    <div class="others">
+                    <div id="location">Location</div>
                         <div class="current_weather_items">
-                            <div class="weather_items">
-                                <p>55℉</p>
-                            </div>
-                            <!--<div class="weather_items">
-                                <p>Humidity</p>
-                                <p>60%</p>
-                            </div>
-                        -->
-                        <!--
-                            <div class="weather_items">
-                                <p>Wind speed</p>
-                                <p>23</p>
-                            </div>
-                        -->
+                            <div id="temperature">Temperature</div>
+                            <div id="weather">Weather</div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -98,9 +76,8 @@
         <div class="gadget" onclick="toggleCalendar()"><img src="resources/icon/calendar.png" alt="Calendar"></div>
         <!--<div class="gadget"><img src="resources/icon/dumbell.png" alt="Dumbell"></div>-->
         <div class="gadget"><img src="resources/icon/headphone.png" alt="Headphone"></div>
-        <div class="gadget weather"><img src="resources/icon/weather.png" alt="Weather"></div>
+        <div class="gadget weather-gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
         <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
-
         <div class="gadget background-changer" onclick="changeBackground()">
           <img src="resources/icon/settings.png" alt="background-changer" id="background-changer">
         </div>
@@ -275,6 +252,7 @@
 
     <script src="scripts.js"></script>
     <script src="todo.js"></script>
+    <script src="weather.js"></script>
 
 </body>
 </html>

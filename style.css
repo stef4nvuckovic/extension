@@ -464,7 +464,7 @@ button{
   width: 40px;
   margin-left: 10px;
 }
-.data_container .location{
+.data_container #location{
   font-size: 22px;
   text-align: center;
 }
