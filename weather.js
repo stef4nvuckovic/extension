@@ -3,25 +3,23 @@ let temperatureElm = document.getElementById('temperature');
 let weatherElm = document.getElementById('weather');
 
 function callApi(){
+  //availability check
   if(navigator.geolocation){
-    //chack availability of geolocation
     console.log("Geolocation available");
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback,{});//use of getCurrentPosition() from HTML5 Geolocation API
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback,{});
   }
   else{
-    console.log("Geolocation is not supported on this browser");
+    alert("Geolocation is not supported on this browser");
   }
 };
 
-//out put the coordinates object 
-
+//output the coordinates object 
 function successCallback(pos){
   var latitude = pos.coords.latitude
   var longitude = pos.coords.longitude
   console.log("Latitude: " + latitude, "Longitude: " + longitude);
   // Call getWeatherInfo with the obtained latitude and longitude
   getWeatherInfo(latitude,longitude);
-
 }
 
 function errorCallback(err){
@@ -46,21 +44,23 @@ function getWeatherInfo(latitude, longitude) {
   })
   .then(data =>{
     console.log(data);
-      //update the UI elements 
+
+      //update the content of UI elements 
     locationElm.innerHTML = data.name;
-    temperatureElm.innerHTML = data.main.temp + "℉";
+    var temperatureCelsius = data.main.temp - 273.15;
+    temperatureElm.innerHTML = data.main.temp + "℉ / " + temperatureCelsius.toFixed(2) + "°C";
     var weatherDescription = data.weather.length > 0 ? data.weather[0].description : "";
-    //checks if the length of the weather array in the data object is greater than 0. In other words, it checks if there is at least one weather description in the array.
-      weatherElm.innerHTML = weatherDescription;
+    weatherElm.innerHTML = weatherDescription;
     })
   .catch(error=>{
     console.error("Error fetching weather data:", error);
   });
 }
-//___________________________________________________________________________________________________________________________
 callApi();
 
-// Get the toDoApp element
+
+//------------------------------------------------control gadget's visibility--------------------------------------------------------------------
+// Get the weather element
 var weatherContainer = document.querySelector('.wContainer');
 weatherContainer.style.display = 'none';
 

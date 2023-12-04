@@ -393,6 +393,8 @@ body {
   padding: 40px 30px 70px;
   border-radius: 10px;
   color: #555;
+  z-index: 1;
+
 }
 
 .todo-app h1{
@@ -493,6 +495,7 @@ button{
   border-radius: 10px;
   color: #fff;
   border:#fff 1px solid;
+  z-index: 0;
 }
 
 .wContainer h1{
