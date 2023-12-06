@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     var musicSlider = document.querySelector(".music-slider");
   

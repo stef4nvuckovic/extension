@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+  }
+
+.todo-app{
+  font-family: serif;
+  position: absolute;
+  top:100px;
+  left:1000px;
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  color: #555;
+}
+
+.todo-app h1{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header h1 img{
+  width: 40px;
+  margin-left: 10px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e8e7e9;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+input{
+  flex:1;
+  border: none;
+  outline: none;
+  background: transparent;
+  height:40px
+}
+button{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #ff5945;
+  padding:16px 50px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+#listContainer li{
+  list-style: none;
+  font-size: 18px;
+  padding:10px 8px 10px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  text-wrap:wrap;
+  word-wrap: break-word;
+}
+#listContainer li::before{ 
+  content: '';
+  position: absolute;
+  height:25px;
+  width: 25px;
+  border-radius: 50%;
+  background-image: url(resources/grey.png);
+  background-size: cover;
+  background-position: center;
+  top: 8px;
+  left: 12px;
+}
+
+#listContainer  li.checked{
+  color: #555;
+  text-decoration: line-through;
+
+}
+
+#listContainer  li.checked::before{
+  background-image: url(resources/purple.png);
+}
+
+
+#listContainer  li span{
+  position: absolute;
+  right:-20px;
+  top:5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+
+}
+
+#listContainer  li span:hover{
+  background: #edeef0;
+}
+
+/*
+
+#removeToDo{
+  height: 50px;
+  border: 1px solid black;
+  vertical-align: middle;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.to-dos{
+  margin-top: 25px;
+}
+
+.paragraph-styling{
+  margin: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+*/

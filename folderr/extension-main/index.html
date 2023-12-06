@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNY Search</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js"></script>
+    <script src="time.js"></script>
+
+    
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div class="container">
+        <div id="currentTime" class="small-time"></div>
+        <h1>SUNY SEARCH</h1>
+        <form action="https://cse.google.com/cse.js?cx=57d12bc989edd45fe" method="GET" target="_blank">
+          <input type="text" id="search-bar" name="q" placeholder="What time does Clinton close?">
+        </form>
+      
+        <div class="control clearfix" style="z-index: 9999;">
+            <div class="control-session">
+              <span class="control-title">session</span>
+              <i class="fa fa-minus-circle" id="session-minus"></i> &nbsp; <span id="session">25</span> &nbsp; <i class="fa fa-plus-circle" id="session-plus"></i>
+            </div>
+            <div class="control-break">
+              <span class="control-title">break</span>
+              <i class="fa fa-minus-circle" id="break-minus"></i> &nbsp; <span id="break">5</span> &nbsp; <i class="fa fa-plus-circle" id="break-plus"></i>
+            </div>
+          </div>
+          <div class="pomodoro session" style="z-index: 9999;">
+            <div class="status">session</div>
+            <div class="timer">25:00</div>
+            <button class="button" id="switch"><i class="fa fa-exchange"></i></button>
+            <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
+            <button class="button" id="toggle"><i class="fa fa-play"></i></button>
+          </div>
+
+          <div class="todo-app">
+            <h1>Task Easy<img src="resources/icon.png"></h1>
+            <div class="row">
+              <input id="inputBox" type="text" placeholder="Add your tasks">
+              <button id="addToDo" onclick="addTask()">Add</button>
+            </div>
+            <ul id="listContainer">
+                <!--
+                  <li class="checked">Test1</li>
+                  <li>Quiz1</li>
+                -->
+            </ul>
+          </div> 
+          <!--weather----------------------------------------------------------------------------->   
+          <div class="wContainer">
+            <!--<h1>Weather Checker</h1>
+            <div id="fig"><img src="resources/weather.png" width="50" height="50"></div>-->
+            <div class="current_info">
+                <div class="data_container">
+                    <div id="location">Location</div>
+                        <div class="current_weather_items">
+                            <div id="temperature">Temperature</div>
+                            <div id="weather">Weather</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!--weather end--------------------------------------------------------------------------------------------->        
+        
+
+        <iframe id="calendarFrame" style="display: none; margin: 0; overflow: hidden; margin-top: 50px; margin-left: -40px" src="calendar/index.html" width="1000px" height="500px" frameborder="0"></iframe>
+    </div>
+
+
+
+    <div class="control clearfix" style="z-index: 9999;">
+      <div class="control-session">
+        <span class="control-title">session</span>
+        <i class="fa fa-minus-circle" id="session-minus"></i> &nbsp; <span id="session">25</span> &nbsp; <i class="fa fa-plus-circle" id="session-plus"></i>
+      </div>
+      <div class="control-break">
+        <span class="control-title">break</span>
+        <i class="fa fa-minus-circle" id="break-minus"></i> &nbsp; <span id="break">5</span> &nbsp; <i class="fa fa-plus-circle" id="break-plus"></i>
+      </div>
+    </div>
+    <div class="pomodoro session" style="z-index: 9999;">
+      <div class="status">session</div>
+      <div class="timer">25:00</div>
+      <button class="button" id="switch"><i class="fa fa-exchange"></i></button>
+      <button class="button" id="reset"><i class="fa fa-refresh"></i></button>
+      <button class="button" id="toggle"><i class="fa fa-play"></i></button>
+    </div>
+
+    </div>
+    <div class="taskbar">
+        <div class="gadget clock-gadget"><img src="resources/icon/clock.png" alt="Clock"></div>
+        <div class="gadget" onclick="toggleCalendar()"><img src="resources/icon/calendar.png" alt="Calendar"></div>
+        <!--<div class="gadget"><img src="resources/icon/dumbell.png" alt="Dumbell"></div>-->
+        <div class="gadget"><img src="resources/icon/headphone.png" alt="Headphone"></div>
+        <div class="gadget weather-gadget"><img src="resources/icon/weather.png" alt="Weather"></div>
+        <div class="gadget todo-gadget"><img src="resources/icon/todo.png" alt="Todo"></div>
+        <div class="gadget background-changer" onclick="changeBackground()">
+          <img src="resources/icon/background.png" alt="background-changer" id="background-changer">
+        </div>
+        <script src="bg.js"></script>
+        <link rel="stylesheet" href="bg.css"> 
+        
+  
+        </div>
+    </div>
+
+    <div class="burghy">
+      <img src="resources/icon/burghy.png" alt="Burghy" id="burghy-icon">
+      <div class="dropdown-content" id="dropdown-content">
+          <a href="https://www.plattsburgh.edu/portal/" target="_blank">Platts Portal</a>
+          <a href="https://www.plattsburgh.edu/academics/library/calendar.html" target="_blank">Library Hours</a>
+          <a href="https://www.plattsburgh.edu/athletics/recreational/fitness-center/schedules.html" target="_blank">Group Exercise</a>
+          <a href="https://www.plattsburgh.edu/about/offices-divisions/registrar/academic-calendar.html" target="_blank">School Calendar</a>
+          <a href="https://www.plattsburgh.edu/academics/resources/technology/index.html" target="_blank">Tech Services</a>
+      </div>
+  </div>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.4.2/core/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.4.2/bootstrap/main.min.js"></script>
+
+
+
+    <script>
+    
+      function toggleCalendar() {
+        var calendarFrame = document.getElementById('calendarFrame');
+        var isVisible = getComputedStyle(calendarFrame).display === 'block';
+        calendarFrame.style.display = isVisible ? 'none' : 'block';
+        controlClearfix.style.display = isVisible ? 'block' : 'none';
+      }
+    
+      var calendarGadget = document.querySelector('.taskbar .gadget[alt="Calendar"]');
+      calendarGadget.addEventListener('click', function () {
+        toggleCalendar();
+      });
+
+      </script>
+
+
+    <script src="scripts.js"></script>
+    <script src="todo.js"></script>
+    <script src="weather.js"></script>
+
+</body>
+</html>
