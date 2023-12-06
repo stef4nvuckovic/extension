@@ -117,14 +117,14 @@ h1 {
 .background-changer img {
   width: 100%; 
   height: 30px;
-  opacity: 0; 
+  opacity: 1; 
   transition: opacity 0.9s ease-in-out; 
   object-fit: contain;
   border-radius: 50%;
 }
 
-.gadget background-changer:hover img {
-  opacity: 1;
+.background-changer:hover img {
+  opacity: 1; 
 }
 
 body {
@@ -203,8 +203,8 @@ body {
   margin: 50px auto;
   width: 300px;
 }
-
 .control-title {
+
   display: block;
   margin: 0 0 5px;
   font-size: 0.6em;
