@@ -2,8 +2,8 @@ const api_url = 'https://ebtisam-project.onrender.com/api_v1/auth/sign_in';
 
 const formData = new FormData();
 formData.append('grant_type', '');
-formData.append('username', 'endalk');
-formData.append('password', 'endalk');
+formData.append('username', '');
+formData.append('password', '');
 formData.append('scope', '');
 formData.append('client_id', '');
 formData.append('client_secret', '');
