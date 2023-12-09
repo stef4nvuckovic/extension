@@ -9,6 +9,11 @@ formData.append('client_id', '');
 formData.append('client_secret', '');
 
 function getInfo(){
+    var username = document.getElementById('username');
+    var password = document.getElementById("password");
+
+    formData.set('username', username);
+    formData.set('password', password);
 
     fetch(api_url, {
         method: 'POST',
@@ -23,7 +28,7 @@ function getInfo(){
           console.error('Error:', error);
           // Handle errors
         });
-        
+
     document.write("here")
-    window.location.href = "https://github.com/stef4nvuckovic/extension/blob/main/index.html";
+    window.location.href = "/Users/endalk/Documents/extension/index.html";
 }
