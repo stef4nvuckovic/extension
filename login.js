@@ -30,5 +30,5 @@ function getInfo(){
         });
 
     document.write("here")
-    window.location.href = "/Users/endalk/Documents/extension/index.html";
+    window.location.href = "https://github.com/stef4nvuckovic/extension/blob/main/index.html";
 }
