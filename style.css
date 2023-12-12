@@ -18,19 +18,19 @@ h1 {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 12px; /* Adjust the font size as needed */
-  color: #fff; /* Text color */
-  font-family: Arial, sans-serif; /* Choose an appropriate font-family */
-  z-index: 2; /* Set a higher z-index to ensure it's above other elements */
+  font-size: 12px; 
+  color: #fff; 
+  font-family: Arial, sans-serif; 
+  z-index: 2; 
 }
 
 .container {
   max-width: 400px;
-  margin: 50px auto; /* Centering the container vertically and horizontally */
+  margin: 50px auto; 
   padding: 20px;
   position: relative;
   
-  z-index: 1; /* Set a lower z-index than the time element */
+  z-index: 1; 
 }
 
 
@@ -44,7 +44,7 @@ h1 {
   color: #ffffff;
   border-radius: 0;
   outline: none;
-  margin-top: 20px; /* Add some spacing between the title and search box */
+  margin-top: 20px; 
 }
 
 
@@ -92,7 +92,7 @@ h1 {
 }
 
 .background-changer {
-  width: 40px; /* Adjust the size as needed to match other gadgets */
+  width: 40px; 
   height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid #fff;
@@ -103,8 +103,8 @@ h1 {
   align-items: center;
   font-size: 18px;
   color: #fff;
-  overflow: hidden; /* Prevent content from being scrollable */
-  position: relative; /* Establish a stacking context for child elements */
+  overflow: hidden; 
+  position: relative; 
   transition: background-color 0.3s, transform 0.1s;
 }
 
@@ -171,10 +171,10 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   text-align: left;
-  backdrop-filter: blur(5px); /* Add the backdrop-filter property for the blur effect */
-  background-color: rgba(255, 255, 255, 0.2); /* Set the background color with transparency */
-  padding: 10px; /* Add some padding to improve readability */
-  border-radius: 5px; /* Add rounded corners */
+  backdrop-filter: blur(5px); 
+  background-color: rgba(255, 255, 255, 0.2); 
+  padding: 10px; 
+  border-radius: 5px; 
 }
 
 .burghy .dropdown-content a {
@@ -242,7 +242,7 @@ body {
   height: 300px;
   color: #3e4348;
   text-align: center;
-  display: none; /* Initially hide the Pomodoro timer */
+  display: none; 
 }
 
 .taskbar .clock-gadget {
