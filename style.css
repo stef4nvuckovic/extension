@@ -349,8 +349,8 @@ body {
   font-family: serif;
   position: absolute;
   z-index: 1;
-  top:200px;
-  left:-450px;
+  top:100px;
+  left:500px;
   width: 100%;
   max-width: 340px;
   background: #fff;
