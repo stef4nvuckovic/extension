@@ -447,9 +447,9 @@ button{
   font-family: serif;
   position: absolute;
   top:-10px;
-  left:570px;
+  left:560px;
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   max-height: 130px;
   padding: 3px 40px 5px;
   border-radius: 10px;
@@ -473,13 +473,7 @@ button{
   font-size: 10px;
   text-align: center;
 }
-.data_container .time{
-  font-size: 15px;
-  text-align: center;
-}
-.data_container #am-pm{
-  font-size: 15px;
-}
+
 .current_weather_items{
   display: flex;
   flex-direction: column;
@@ -495,4 +489,10 @@ button{
   font-size: 15px;
   margin-top: -5px;
   margin-bottom: -5px;
+}
+#temperature{
+  font-size: 18px;
+}
+#weather{
+  font-size: 18px;
 }
